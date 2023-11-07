@@ -10,6 +10,10 @@ describe('formatFullname', () => {
         expect(formatFullname([])).to.equal('Error');
         expect(formatFullname(function () { })).to.equal('Error');
     });
+    it('should return an error if "fullName" contains characters other than letters', () => {
+        expect(formatFullname('Jo4n Doe')).to.equal('Error');
+        expect(formatFullname('#@ >?')).to.equal('Error');
+    });
     it('should return an error if "fullname" is longer or shorter than two words', () => {
         expect(formatFullname('john')).to.equal('Error');
         expect(formatFullname('john doe test')).to.equal('Error');
