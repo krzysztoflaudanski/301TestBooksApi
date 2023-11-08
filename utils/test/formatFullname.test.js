@@ -17,6 +17,7 @@ describe('formatFullname', () => {
     it('should return an error if "fullname" is longer or shorter than two words', () => {
         expect(formatFullname('john')).to.equal('Error');
         expect(formatFullname('john doe test')).to.equal('Error');
+        expect(formatFullname('')).to.equal('Error');
     });
     it('should return an error if "firstName" or "Lastname" is shorter than two', () => {
         expect(formatFullname('j d')).to.equal('Error');
